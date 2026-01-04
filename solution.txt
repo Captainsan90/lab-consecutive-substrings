@@ -1,2 +1,31 @@
-Please add your pseudocode to this file
-And a written explanation of your solution
+# Problem Definition
+The goal is to write a function that takes a string as input and returns an array containing all possible consecutive substrings. 
+The order matters here, we must list all substrings starting from the first character, then all starting from the second character, and so on and so on.
+
+# Pseudocode
+1. Create an empty array called 'result' to store the substrings.
+2. Start a loop (variable 'i') that goes from 0 up to the length of the string (start index).
+    3. Inside that, start a second loop (variable 'j') that goes from 'i + 1' up to the length of the string + 1 (end index).
+        4. Slice the string from index 'i' to index 'j'.
+        5. Push this sliced segment into the 'result' array.
+    6. End inner loop.
+7. End outer loop.
+8. Return the 'result' array.
+
+# Big O Analysis
+
+**Time Complexity: O(n^2)**
+
+1. **Scalable Element:**
+   The scalable element is the length of the input string, which we call *n*.
+
+2. **Looping Elements:**
+   - We have an **outer loop** that iterates *n* times (once for every character in the string).
+   - We have an **inner loop** that iterates roughly *n* times as well (decreasing by 1 with each step of the outer loop).
+
+3. **Calculation:**
+   Since we have a nested loop structure where the number of operations is directly related to the square of the input size (n * n), the time complexity is Quadratic.
+   
+   If the input string length increases, the time to complete the operation increases quadratically. For example, if the string length doubles, the work required roughly quadruples.
+
+   Final Big O: O(n^2)
